@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: part3-deployment
+spec:
+  selector:
+    matchLabels:
+      app: part3
+  template:
+    metadata:
+      labels:
+        app: part3
+    spec:
+      containers:
+        - name: part3
+          image: wil42/playground:v1
+          ports:
+            - name: app
+              containerPort: 3000

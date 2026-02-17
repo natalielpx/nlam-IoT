@@ -17,4 +17,4 @@ spec:
           image: wil42/playground:v1
           ports:
             - name: app
-              containerPort: 3000
+              containerPort: 8888

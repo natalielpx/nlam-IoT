@@ -1,16 +1,20 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: part3-ingress
-  namespace: dev
+  name: argocd-ingress
+  namespace: argocd
+  annotations:
+    traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
+  ingressClassName: traefik
   rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: part3-service
-            port:
-              number: 8888
+    - host: argocd.localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 443

@@ -13,6 +13,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: part3
+                name: part3-service
                 port:
                   number: 443

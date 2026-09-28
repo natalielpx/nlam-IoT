@@ -13,6 +13,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: argocd-server
+                name: part3
                 port:
                   number: 443
